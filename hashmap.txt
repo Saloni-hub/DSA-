@@ -1,0 +1,31 @@
+import java.util.*;
+import java.util.Map.Entry;
+class Main{
+    public static void main(String[] args){
+        HashMap<String,Integer> num=new HashMap<>();
+        num.put("one",1); // put use to add element
+        num.put("two",2);
+        num.put("five",5);
+        num.put("one",10); //use to update key value crossponding
+        num.putIfAbsent("two",22); // put when two key not present
+        num.putIfAbsent("four",4); 
+        System.out.println(num.get("four")); // get use to print value crossponding key
+        System.out.println(num.get("three")); // get use to print value if value not present return null
+        System.out.println(num.containsKey("two")); // if present key return true otherwise false
+        System.out.println(num.containsValue(2)); // if present value return true
+        System.out.println("key value 4 replace 12-->"+num.replace("four",4,12));
+        System.out.println("key value 4 replace 13 -->"+num.replace("four",5,13)); // return false because four ke saath 4 value hai
+        // find set of key  
+        System.out.println("set of keys->"+num.keySet());
+        System.out.println("set of values->"+num.values());
+        System.out.println("Entery set=>"+num.entrySet());
+        System.out.println(num);
+        Set<Entry<String,Integer>> entries=num.entrySet();
+        // itreate all Entery
+        for(Entry<String,Integer> entry: entries){
+            // for eACH ENTRY VALUE MULTIPLY BY 10
+            entry.setValue(entry.getValue() * 10);        
+        }
+        System.out.println("Multiply by 10==>"+num);
+    }
+}
