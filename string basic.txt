@@ -1,0 +1,59 @@
+class Main{
+    public static void main(String[] args){
+        // String s="hello";
+        // String str=new String("World");
+        // char ch[]={'s','a','l','o','n','i'};
+        // String st=new String(ch);
+        // System.out.println(st);
+        // System.out.println(s+" "+str);
+
+        // immutable String
+        String s="Saloni";
+        s.concat("Pandey");
+        System.out.println(s);
+
+        // explicitly
+         String st="Sachin";  
+         st=st.concat(" Tendulkar");  
+         System.out.println(st); 
+
+        //  String comparision (by equals,by==operator,bycompareTo())
+        String s3=new String("juhi");
+        String s4=new String("juhi");
+        System.out.println(s3.equals(s4));
+        System.out.println(s.equals(st));
+        System.out.println(s.equals(s3));
+
+        String s5=new String("JUhi");
+        System.out.println(s3.equalsIgnoreCase(s5));
+
+        // compare==operator
+         String s6="Sachin";  
+         String s7="Sachin";  
+        String s8=new String("Sachin");  
+        System.out.println(s6==s7);//true (because both refer to same instance)  
+        System.out.println(s6==s8);//false(because s3 refers to instance created in nonpool)  
+
+        // compareTo()
+        String s9="Sachin";
+        String s10="Sachin";
+        String s11="Ratan";
+        System.out.println(s9.compareTo(s10));
+        System.out.println(s9.compareTo(s11));
+        System.out.println(s10.compareTo(s9));
+
+        // String Concatination
+        String s12="Saloni"+"Pandey";
+        System.out.println(s12);
+
+        // String Builder
+        String s13=(new StringBuilder()).append("Sachin").append(" Tendulkar").toString();
+        System.out.println(s13);
+
+        // Substring java start index 0 end index not include
+        String s14="hello";
+        System.out.println(s14.substring(0,2));
+        System.out.println(s14.substring(0));
+
+    }
+}
