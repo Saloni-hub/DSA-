@@ -1,0 +1,32 @@
+class Main{
+    public static void main(String[] args){
+    //   String Mathod
+    //  1-----charAt() method
+    String name="Saloni";
+    char ch=name.charAt(3);
+    System.out.println(ch);
+
+    // find first and last character from the provided string.
+    String s="Welcome to home Saloni";
+    int str=s.length();
+    System.out.println("char at 0 inde:"+s.charAt(0));
+    System.out.println("char at last index:"+s.charAt(str-1));
+// find odd char in string
+    String st="Welcome saloni to the home";
+    for(int i=0;i<st.length();i++){
+        if(i%2!=0){
+            System.out.println("char at "+ i + " place is"+st.charAt(i));
+        }
+    }
+  
+    //  find occurence of character
+    String stri="Welcome to the bankok";
+    int count=0;
+    for(int i=0;i<stri.length();i++){
+        if(stri.charAt(i)=='t'){
+            count++;
+        }
+    }
+    System.out.println("frequency of character" + count);
+    }
+}
