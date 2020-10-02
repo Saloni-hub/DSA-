@@ -1,0 +1,24 @@
+import java.io.*; // for handling input/output
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+       Scanner sc=new Scanner(System.in);
+       String s1=sc.next();
+       String s2=sc.next();
+       int s1len=s1.length();
+       int s2len=s2.length();
+       if(s1len==s2len){
+           char [] sArr1=s1.toCharArray();
+           char [] sArr2=s2.toCharArray();
+           Arrays.sort(sArr1);
+           Arrays.sort(sArr2);
+           s1=Arrays.toString(sArr1);
+           s2=Arrays.toString(sArr2);
+           if(s1.equalsIgnoreCase(s2)){
+               System.out.println("YES");
+           } else {
+               System.out.println("NO");
+           }
+       }
+}
+}
