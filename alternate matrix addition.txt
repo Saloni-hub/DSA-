@@ -1,0 +1,28 @@
+import java.io.*; // for handling input/output
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+       Scanner sc=new Scanner(System.in);
+       int n=sc.nextInt();
+       int[][] mat=new int[n][n];
+       for(int i=0;i<n;i++){
+           for(int j=0;j<n;j++){
+               mat[i][j]=sc.nextInt();
+           }
+       }
+       long black_sum=0;
+       long white_sum=0;
+       for(int i=0;i<n;i++){
+           for(int j=0;j<n;j++){
+               if((i+j)%2==0){
+                   black_sum=black_sum+mat[i][j];
+               }
+               else {
+                   white_sum=white_sum+mat[i][j];
+               }
+           }
+       }
+       System.out.println(black_sum);
+       System.out.println(white_sum);
+}
+}
