@@ -1,0 +1,15 @@
+import java.io.*; // for handling input/output
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+       Scanner sc=new Scanner(System.in);
+       int n=sc.nextInt();
+       int x=sc.nextInt();
+       if(x>10){
+           System.out.println(0);
+       } else {
+           int ans=(n-1)*(10-x);
+           System.out.println(ans);
+       }
+}
+}
