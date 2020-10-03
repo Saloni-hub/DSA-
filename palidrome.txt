@@ -1,0 +1,17 @@
+import java.io.*; // for handling input/output
+import java.util.*;
+class Main{
+    // distributed money between three people
+    public static void main(String[] args){
+       Scanner sc=new Scanner(System.in);
+       String s=sc.next();
+       StringBuilder sb=new StringBuilder(s);
+       sb.reverse();
+       String rev=sb.toString();
+       if(s.equals(rev)) {
+           System.out.println("Palidrome");
+       } else {
+           System.out.println("Not Palidrome");
+       }
+}
+}
