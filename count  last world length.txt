@@ -1,0 +1,19 @@
+import java.io.*; // for handling input/output
+import java.util.*;
+class Main{
+    // distributed money between three people
+    public static void main(String[] args){
+       Scanner sc=new Scanner(System.in);
+       String s=sc.next();
+       String x=s.trim();
+       int len=0;
+       for(int i=0;i<s.length();i++){
+           if(x.charAt(i)==' '){
+               len=0;
+           } else {
+               len++;
+           }
+       }
+       System.out.print(len);
+}
+}
