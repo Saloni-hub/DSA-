@@ -1,0 +1,28 @@
+import java.util.*;
+import java.io.*;
+class Main {
+    static long CheckPerfectSquare(long start,long end,long search){
+        if(start>end){
+            return -1;
+        }
+        long mid=(start+end)/2;
+        if(mid*mid==search){
+            return mid;
+        }
+        if(search>mid*mid){
+            return CheckPerfectSquare(mid+1,end,search);
+        } else {
+            return CheckPerfectSquare(start,mid-1,search);
+        }
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        long n=sc.nextLong();
+        long r=CheckPerfectSquare(0,10000000,n);
+        if(r==-1){
+            System.out.print("No");
+        } else {
+            System.out.print("Yes");
+        }
+    }
+}
