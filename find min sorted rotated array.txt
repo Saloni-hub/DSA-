@@ -1,0 +1,33 @@
+import java.util.*;
+import java.io.*;
+class Main {
+     static int binary_search(int [] a,int start,int end){
+            if(start>end) {
+                return a[0];
+            }
+            if(end==start){
+                return a[start];
+            }
+            int mid=start+(end-start)/2;
+            if(mid<end && a[mid+1]<=a[mid]){
+                return a[mid+1];
+            } 
+            if(start>mid && a[mid]<=a[mid-1]){
+                return a[mid];
+            } 
+            if(a[mid]<a[end]) {
+                return binary_search(a,start,mid-1);
+            }
+            return binary_search(a,mid+1,end);
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        System.out.println(binary_search(arr,0,n-1));
+
+    }
+}
