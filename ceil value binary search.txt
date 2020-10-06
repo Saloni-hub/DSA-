@@ -1,0 +1,31 @@
+import java.util.*;
+import java.io.*;
+class Main {
+    static int ceil_search(int[] a,int start,int end,int ceil){
+        if(start>end){
+            return end;
+        }
+        if(ceil<=a[start]){
+            return a[start];
+        }
+        for(int i=start;i<end;i++){
+            if(a[i]==ceil){
+                return a[i];
+            }
+            if(a[i]<ceil && a[i+1]>=ceil){
+                return a[i+1];
+            }
+        }
+        return -1;
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int ceil=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        System.out.println(ceil_search(arr,0,n-1,ceil));
+    }
+}
