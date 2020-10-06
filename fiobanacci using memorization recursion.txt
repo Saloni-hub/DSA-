@@ -1,0 +1,32 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+class Main
+{
+	static int f[]=new int[100];
+	static int Fibnoacci(int n){
+		if(n<=1){
+			return n;
+		} 
+		if((f[n])!=-1){
+			return f[n];
+		}
+		f[n]=Fibnoacci(n-1)+Fibnoacci(n-2);
+		return f[n];
+ 
+	}
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		// int f[]=new int[100];
+		for(int i=0;i<100;i++){
+			f[i]=-1;
+		}
+		int result=Fibnoacci(n);
+		System.out.println(result);
+ 
+	}
+}
