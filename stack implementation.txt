@@ -1,0 +1,49 @@
+class Stack {
+    static final int max=1000;
+    int top;
+    int a[]=new int[max];
+    boolean isEmpty(){
+        return (top<0);
+    }
+    Stack() {
+        top=-1;
+    }
+    boolean push(int x){
+        if(top>=(max-1)){
+            System.out.println("Overflow");
+            return false;
+        } else {
+            a[++top]=x;
+            System.out.println(x+"  pushed into stack");
+            return true;
+        }
+    }
+    int pop(){
+        if(top<0){
+            System.out.println("Underflow");
+            return 0;
+        } else {
+            int remove=a[top--];
+            return remove;
+        }
+    }
+    int peek(){
+        if(top<0){
+            System.out.println("Underflow");
+            return 0;
+        } else {
+            int  val=a[top];
+            return val;
+        }
+    }
+}
+class Main {
+    public static void main(String args[]){
+        Stack s=new Stack();
+        s.push(12);
+        s.push(13);
+        s.push(25);
+        s.push(15);
+        System.out.println(s.pop()+" Popeed from stack");
+    }
+}
