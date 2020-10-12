@@ -1,0 +1,59 @@
+import java.util.*;
+import java.io.*;
+class Main {
+	Node head;
+	static class Node {
+		int data;
+		Node next;
+		Node(int d){
+			data=d;
+			next=null;
+		}
+	}
+	// Insert at front
+	public void  pushFront(int new_data) {
+		Node new_node=new Node(new_data);
+		new_node.next=head;
+		head=new_node;
+	}
+	// insert at given position
+	public void insertPos(Node prev_node,int new_data) {
+		if(prev_node==null){
+			return ;
+		} else {
+			Node new_no=new Node(new_data);
+			new_no.next=prev_node.next;
+			prev_node.next=new_no;
+		}
+	}
+	public void append(int new_val){
+		Node new_nod=new Node(new_val);
+		if(head==null) {
+			head=new Node(new_val);
+			return;
+		} 
+		new_nod.next=null;
+		Node last=head;
+		while(last.next!=null){
+			last=last.next;
+		}
+		last.next=new_nod;
+		return;
+	}
+	public void printlist()
+	{
+		Node temp=head;
+		while(temp!=null) {
+			System.out.print(temp.data+" ");
+			temp=temp.next;
+		}
+	}
+	public static void main(String args[]) {
+		Main list=new Main();
+		list.append(6);
+		list.pushFront(12);
+		list.insertPos(list.head.next,8);
+		System.out.print("\nCreated list is:");
+		list.printlist();
+	}
+}
