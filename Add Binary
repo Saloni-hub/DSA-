@@ -1,0 +1,30 @@
+// LEET Code Proble 64
+// Question -> Given two binary strings a and b, return their sum as a binary string.
+
+var addBinary = function(a, b) {
+    let i = a.length - 1;
+    let j = b.length - 1;
+    let sum = '';
+    let carry = 0;
+    while(i>=0 || j>=0){
+        let A = a[i] || '0';
+        let B = b[j] || '0';
+        sum = String(A^B^carry) + sum;
+        if(A === B && A !== String(carry)){
+            // flip
+            carry = Number(!carry)
+        }
+        i--;
+        j--;
+    }
+    if(carry){
+        sum = (String(carry) + sum);
+    }
+    return sum;
+    // Method 2
+    // let sum = BigInt(`0b${a}`) + BigInt(`0b${b}`);
+    // return sum.toString(2)
+    //  Method 3
+    // return (parseInt(a,2) + parseInt(b,2)).toString
+};
+
