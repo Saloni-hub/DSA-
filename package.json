@@ -1,0 +1,12 @@
+{
+  "name": "dsa-",
+  "version": "1.0.0",
+  "description": "class Main { \tpublic static void main (String[] args) {                       // Your code here \t\t\t\t\t  Scanner sc=new Scanner(System.in); \t\t\t\t\t  int T=sc.nextInt(); \t\t\t\t\t  for(int k=0;k<T;k++){ \t\t\t\t\t\t  int N=sc.nextInt(); \t\t\t\t\t\t  int [] arr=new int[N]; \t\t\t\t\t\t  for(int i=0;i<N;i++){ \t\t\t\t\t\t\t  arr[i]=sc.nextInt(); \t\t\t\t\t\t  } \t\t\t\t\t\t  for(int i=0;i<N;i++){ \t\t\t\t\t\t\t  for(int j=0;j<N-i-1;j++){ \t\t\t\t\t\t\t\t  if(arr[j]>arr[j+1]){ \t\t\t\t\t\t\t\t\t  int temp=arr[j]; \t\t\t\t\t\t\t\t\t  arr[j]=arr[j+1]; \t\t\t\t\t\t\t\t\t  arr[j+1]=temp; \t\t\t\t\t\t\t\t  } \t\t\t\t\t\t\t\t } \t\t\t\t\t\t  }",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
